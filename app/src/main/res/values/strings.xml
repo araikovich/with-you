@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Together</string>
+
+    <string name="mock_text_description">Покер (англ. poker) — карточная игра, цель которой собрать выигрышную комбинацию или вынудить всех соперников прекратить участвовать в игре. Игра идёт с полностью или частично закрытыми картами</string>
+    <string name="persons_count">%d/%d</string>
+    <string name="all_events">Все события</string>
+    <string name="my_events">Мои события</string>
+</resources>

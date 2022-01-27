@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/background_event_card_item">
+
+    <View
+        android:id="@+id/category_icon"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/background_sport_icon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_category_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/sub_title"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/category_icon"
+        app:layout_constraintStart_toEndOf="@id/category_icon"
+        app:layout_constraintTop_toTopOf="@id/category_icon"
+        tools:text="Sport" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/title"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/category_icon"
+        app:layout_constraintTop_toBottomOf="@id/category_icon"
+        tools:text="Play football" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/sub_title"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="@string/mock_text_description" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_persons_count"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_description"
+        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        app:srcCompat="@drawable/ic_person" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_persons_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/sub_title"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/ic_persons_count"
+        app:layout_constraintStart_toEndOf="@id/ic_persons_count"
+        app:layout_constraintTop_toTopOf="@id/ic_persons_count"
+        tools:text="14/22" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_date"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/ic_persons_count"
+        app:layout_constraintStart_toEndOf="@id/tv_persons_count"
+        app:layout_constraintTop_toTopOf="@id/ic_persons_count"
+        app:srcCompat="@drawable/ic_calendar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/sub_title"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/ic_date"
+        app:layout_constraintStart_toEndOf="@id/ic_date"
+        app:layout_constraintTop_toTopOf="@id/ic_date"
+        tools:text="27.02.12" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
