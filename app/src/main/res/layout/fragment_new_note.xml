@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_page_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/new_event"
+                android:textColor="@color/title"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_close"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_page_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_page_title"
+                app:srcCompat="@drawable/ic_close" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="45dp"
+                android:text="@string/title"
+                android:textColor="@color/sub_title"
+                android:textSize="18sp"
+                app:fontFamily="@font/roboto_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_page_title" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_edit_text"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="@string/its_here"
+                android:padding="10dp"
+                android:textColor="@color/title"
+                android:textColorHint="@color/divider"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/description"
+                android:textColor="@color/sub_title"
+                android:textSize="18sp"
+                app:fontFamily="@font/roboto_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_title" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_edit_text"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="top"
+                android:hint="@string/description_hint"
+                android:minHeight="150dp"
+                android:padding="10dp"
+                android:textColor="@color/title"
+                android:textColorHint="@color/divider"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_description" />
+
+            <View
+                android:id="@+id/background_date"
+                android:layout_width="0dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_edit_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_description" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/date_question"
+                android:textColor="@color/title"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/background_date"
+                app:layout_constraintStart_toStartOf="@id/background_date"
+                app:layout_constraintTop_toTopOf="@id/background_date" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_date"
+                android:layout_width="135dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_time"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:text="27.03.2022"
+                android:textColor="@color/title"
+                android:textSize="21sp"
+                app:layout_constraintBottom_toBottomOf="@id/background_date"
+                app:layout_constraintEnd_toEndOf="@id/background_date"
+                app:layout_constraintTop_toTopOf="@id/background_date" />
+
+
+            <View
+                android:id="@+id/background_time"
+                android:layout_width="0dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_edit_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/background_date" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/when_title"
+                android:textColor="@color/title"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/background_time"
+                app:layout_constraintStart_toStartOf="@id/background_time"
+                app:layout_constraintTop_toTopOf="@id/background_time" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_time"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_time"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:text="19:00"
+                android:textColor="@color/title"
+                android:textSize="21sp"
+                app:layout_constraintBottom_toBottomOf="@id/background_time"
+                app:layout_constraintEnd_toEndOf="@id/background_time"
+                app:layout_constraintTop_toTopOf="@id/background_time" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/place_title"
+                android:textColor="@color/sub_title"
+                android:textSize="18sp"
+                app:fontFamily="@font/roboto_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/background_time" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_place"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_edit_text"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="@string/place_hint"
+                android:padding="10dp"
+                android:textColor="@color/title"
+                android:textColorHint="@color/divider"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_place" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_persons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/person_title"
+                android:textColor="@color/sub_title"
+                android:textSize="18sp"
+                app:fontFamily="@font/roboto_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_place" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_person"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_edit_text"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="@string/persons_hint"
+                android:padding="10dp"
+                android:textColor="@color/title"
+                android:textColorHint="@color/divider"
+                android:inputType="number"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_persons" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_take_part"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginEnd="22dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/backgrond_action_btn"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:textColor="@color/title"
+                android:textSize="16sp"
+                android:text="@string/create"
+                android:layout_marginBottom="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_person"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>

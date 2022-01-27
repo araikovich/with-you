@@ -1,8 +1,9 @@
-package com.yandex.together.ui
+package com.yandex.together.ui.adapter
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.yandex.together.ui.dpToPx
 
 class EventCardsItemDecorator : RecyclerView.ItemDecoration() {
 

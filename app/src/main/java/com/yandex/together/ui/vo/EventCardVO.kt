@@ -1,4 +1,4 @@
-package com.yandex.together.ui
+package com.yandex.together.ui.vo
 
 import androidx.annotation.DrawableRes
 

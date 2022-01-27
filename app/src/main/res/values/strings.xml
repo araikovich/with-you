@@ -5,4 +5,18 @@
     <string name="persons_count">%d/%d</string>
     <string name="all_events">Все события</string>
     <string name="my_events">Мои события</string>
+    <string name="chat">Чат</string>
+    <string name="description">Описание:</string>
+    <string name="take_part">Участвовать</string>
+    <string name="new_event">Новое событие</string>
+    <string name="title">Заголовок</string>
+    <string name="its_here">Он тут</string>
+    <string name="description_hint">Расскажи что будете делать...</string>
+    <string name="when_title">Когда все состоится?</string>
+    <string name="place_title">Место</string>
+    <string name="place_hint">Где это будет?</string>
+    <string name="person_title">Сколько человек собрать?</string>
+    <string name="persons_hint">Например, 5</string>
+    <string name="create">Создать</string>
+    <string name="date_question">Какого числа?</string>
 </resources>

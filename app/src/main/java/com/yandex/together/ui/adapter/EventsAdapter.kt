@@ -6,15 +6,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yandex.together.R
 import com.yandex.together.databinding.ViewHolderEventCardBinding
+import com.yandex.together.ui.vo.EventCardVO
 
-class EventsAdapter : RecyclerView.Adapter<EventsViewHolder>() {
+class EventsAdapter(private val onEventClick: (EventCardVO) -> Unit) :
+    RecyclerView.Adapter<EventsViewHolder>() {
 
     private val eventCards = mutableListOf<EventCardVO>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventsViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.view_holder_event_card, parent, false)
-        return EventsViewHolder(view)
+        return EventsViewHolder(view, onEventClick)
     }
 
     override fun onBindViewHolder(holder: EventsViewHolder, position: Int) {
@@ -30,7 +32,8 @@ class EventsAdapter : RecyclerView.Adapter<EventsViewHolder>() {
     }
 }
 
-class EventsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class EventsViewHolder(view: View, private val onEventClick: (EventCardVO) -> Unit) :
+    RecyclerView.ViewHolder(view) {
 
     private val binding = ViewHolderEventCardBinding.bind(view)
 
@@ -46,6 +49,9 @@ class EventsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 totalPersonsCount
             )
             binding.tvDate.text = date
+            binding.root.setOnClickListener {
+                onEventClick(event)
+            }
         }
     }
 }

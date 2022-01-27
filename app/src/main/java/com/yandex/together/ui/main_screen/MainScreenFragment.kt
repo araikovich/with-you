@@ -1,4 +1,4 @@
-package com.yandex.together.ui
+package com.yandex.together.ui.main_screen
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.yandex.together.R
 import com.yandex.together.databinding.FragmentMainScreenBinding
+import com.yandex.together.ui.MainActivity
 
 class MainScreenFragment : Fragment() {
 
@@ -27,6 +28,7 @@ class MainScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViewPager()
+        setupListeners()
     }
 
     private fun setupViewPager() {
@@ -67,6 +69,11 @@ class MainScreenFragment : Fragment() {
         })
     }
 
+    private fun setupListeners() {
+        binding?.icNew?.setOnClickListener {
+            (requireActivity() as MainActivity).startNewNoteFragment()
+        }
+    }
     override fun onDestroy() {
         binding = null
         super.onDestroy()

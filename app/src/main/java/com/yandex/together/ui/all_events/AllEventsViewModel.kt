@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.yandex.together.R
-import com.yandex.together.ui.EventCardVO
+import com.yandex.together.ui.vo.EventCardVO
 
 class AllEventsViewModel(): ViewModel() {
 

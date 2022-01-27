@@ -7,16 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yandex.together.databinding.FragmentWithEventsBinding
-import com.yandex.together.ui.EventCardsItemDecorator
+import com.yandex.together.ui.adapter.EventCardsItemDecorator
 import com.yandex.together.ui.EventsAdapter
 import com.yandex.together.ui.all_events.AllEventsFragment
+import com.yandex.together.ui.event_detail.EventDetailBottomSheetDialogFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MyEventsFragment : Fragment() {
 
     private var binding: FragmentWithEventsBinding? = null
     private val viewModel: MyEventsViewModel by viewModel()
-    private var adapter: EventsAdapter = EventsAdapter()
+    private var adapter: EventsAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,11 +37,14 @@ class MyEventsFragment : Fragment() {
 
     private fun observeItems() {
         viewModel.eventsLiveData.observe(viewLifecycleOwner, {
-            adapter.provideItems(it)
+            adapter?.provideItems(it)
         })
     }
 
     private fun setupAdapter() {
+        adapter = EventsAdapter {
+            EventDetailBottomSheetDialogFragment().show(childFragmentManager, "TAG")
+        }
         binding?.rvAllEvents?.adapter = adapter
         binding?.rvAllEvents?.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)

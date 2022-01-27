@@ -19,4 +19,6 @@
     <color name="sport_icon">#F16567</color>
     <color name="nature_icon">#2A9D8F</color>
     <color name="table_games_icon">#E9C46A</color>
+
+    <color name="transparent">#00000000</color>
 </resources>

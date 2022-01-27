@@ -41,6 +41,16 @@
         app:layout_constraintStart_toEndOf="@id/tv_all_events"
         app:layout_constraintTop_toTopOf="@id/header" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_new"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_my_events"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_my_events"
+        app:srcCompat="@drawable/ic_plus" />
+
     <View
         android:layout_width="0dp"
         android:layout_height="1dp"

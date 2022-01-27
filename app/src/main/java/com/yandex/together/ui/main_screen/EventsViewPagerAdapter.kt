@@ -1,4 +1,4 @@
-package com.yandex.together.ui
+package com.yandex.together.ui.main_screen
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
