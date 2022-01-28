@@ -26,10 +26,10 @@
         android:id="@+id/scroller"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="30dp"
         android:clipToPadding="false"
         android:fillViewport="true"
         android:paddingBottom="170dp"
-        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,17 +45,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/roboto_medium"
+                android:text="Игаем в футбол"
                 android:textColor="@color/title"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="Игаем в футбол"
                 tools:text="Игаем в футбол" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/chat"
-                android:layout_width="70dp"
+                android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="25dp"
@@ -95,7 +95,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/persons"
-                android:layout_width="70dp"
+                android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:background="@drawable/background_event_card_item"
                 app:layout_constraintEnd_toStartOf="@id/date"
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="@string/chat"
+                    android:text="12/22"
                     android:textColor="@color/sub_title"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -133,7 +133,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/date"
-                android:layout_width="70dp"
+                android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:background="@drawable/background_event_card_item"
                 app:layout_constraintEnd_toStartOf="@id/share"
@@ -159,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="@string/chat"
+                    android:text="12.02 22:00"
                     android:textColor="@color/sub_title"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -171,7 +171,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/share"
-                android:layout_width="70dp"
+                android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:layout_marginEnd="25dp"
                 android:background="@drawable/background_event_card_item"
@@ -197,7 +197,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="@string/chat"
+                    android:text="Рассказать"
                     android:textColor="@color/sub_title"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -245,116 +245,7 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/remove_1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="25dp"
-                android:background="@drawable/background_event_card_item"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/description_container">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/description"
-                    android:textColor="@color/title"
-                    android:textSize="18sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/mock_text_description"
-                    android:textColor="@color/sub_title"
-                    android:textSize="14sp"
-                    tools:text="@string/mock_text_description" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/remove_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="25dp"
-                android:background="@drawable/background_event_card_item"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/remove_1">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/description"
-                    android:textColor="@color/title"
-                    android:textSize="18sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/mock_text_description"
-                    android:textColor="@color/sub_title"
-                    android:textSize="14sp"
-                    tools:text="@string/mock_text_description" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/remove_3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="25dp"
-                android:background="@drawable/background_event_card_item"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/remove_2">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/description"
-                    android:textColor="@color/title"
-                    android:textSize="18sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/mock_text_description"
-                    android:textColor="@color/sub_title"
-                    android:textSize="14sp"
-                    tools:text="@string/mock_text_description" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -377,9 +268,9 @@
         android:background="@drawable/backgrond_action_btn"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
+        android:text="@string/take_part"
         android:textColor="@color/title"
         android:textSize="16sp"
-        android:text="@string/take_part"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

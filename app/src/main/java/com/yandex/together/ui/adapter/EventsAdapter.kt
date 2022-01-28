@@ -3,15 +3,15 @@ package com.yandex.together.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.yandex.together.R
 import com.yandex.together.databinding.ViewHolderEventCardBinding
 import com.yandex.together.ui.vo.EventCardVO
 
 class EventsAdapter(private val onEventClick: (EventCardVO) -> Unit) :
-    RecyclerView.Adapter<EventsViewHolder>() {
-
-    private val eventCards = mutableListOf<EventCardVO>()
+    PagingDataAdapter<EventCardVO, EventsViewHolder>(DataDifferntiator) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventsViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -20,15 +20,18 @@ class EventsAdapter(private val onEventClick: (EventCardVO) -> Unit) :
     }
 
     override fun onBindViewHolder(holder: EventsViewHolder, position: Int) {
-        holder.bind(eventCards[position])
+        holder.bind(getItem(position))
     }
 
-    override fun getItemCount() = eventCards.size
+    object DataDifferntiator : DiffUtil.ItemCallback<EventCardVO>() {
 
-    fun provideItems(events: List<EventCardVO>) {
-        eventCards.clear()
-        eventCards.addAll(events)
-        notifyDataSetChanged()
+        override fun areItemsTheSame(oldItem: EventCardVO, newItem: EventCardVO): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: EventCardVO, newItem: EventCardVO): Boolean {
+            return oldItem == newItem
+        }
     }
 }
 
@@ -37,8 +40,8 @@ class EventsViewHolder(view: View, private val onEventClick: (EventCardVO) -> Un
 
     private val binding = ViewHolderEventCardBinding.bind(view)
 
-    fun bind(event: EventCardVO) {
-        event.apply {
+    fun bind(event: EventCardVO?) {
+        event?.apply {
             binding.categoryIcon.setBackgroundResource(categoryRes)
             binding.tvCategoryTitle.text = categoryTitle
             binding.tvTitle.text = title

@@ -1,5 +1,6 @@
 package com.yandex.together.di
 
+import com.yandex.together.data.api.EventsApi
 import com.yandex.together.data.api.LogInInterceptor
 import com.yandex.together.data.api.LoginApi
 import com.yandex.together.data.prefs.PreferencesStorage
@@ -13,6 +14,7 @@ val networkModule = module {
     factory { provideLoginInterceptor(get()) }
     factory { provideOkHttp(get()) }
     factory { provideLoginApi(get()) }
+    single { provideEventsApi(get()) }
 }
 
 fun provideOkHttp(logInInterceptor: LogInInterceptor): OkHttpClient {
@@ -34,4 +36,8 @@ fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
 
 fun provideLoginApi(retrofit: Retrofit): LoginApi {
     return retrofit.create(LoginApi::class.java)
+}
+
+fun provideEventsApi(retrofit: Retrofit): EventsApi {
+    return retrofit.create(EventsApi::class.java)
 }

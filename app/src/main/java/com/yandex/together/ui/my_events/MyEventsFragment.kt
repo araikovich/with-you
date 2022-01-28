@@ -5,12 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yandex.together.databinding.FragmentWithEventsBinding
 import com.yandex.together.ui.adapter.EventCardsItemDecorator
 import com.yandex.together.ui.EventsAdapter
 import com.yandex.together.ui.all_events.AllEventsFragment
 import com.yandex.together.ui.event_detail.EventDetailBottomSheetDialogFragment
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MyEventsFragment : Fragment() {
@@ -32,12 +34,11 @@ class MyEventsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupAdapter()
         observeItems()
-        viewModel.getEvents()
     }
 
     private fun observeItems() {
         viewModel.eventsLiveData.observe(viewLifecycleOwner, {
-            adapter?.provideItems(it)
+            //lifecycleScope.launch {  adapter?.submitData(it) }
         })
     }
 

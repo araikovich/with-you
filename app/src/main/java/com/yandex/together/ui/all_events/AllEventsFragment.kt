@@ -4,13 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yandex.together.databinding.FragmentWithEventsBinding
 import com.yandex.together.ui.adapter.EventCardsItemDecorator
 import com.yandex.together.ui.EventsAdapter
 import com.yandex.together.ui.MainActivity
 import com.yandex.together.ui.event_detail.EventDetailBottomSheetDialogFragment
+import com.yandex.together.ui.event_detail.EventDetailVO
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AllEventsFragment : Fragment() {
@@ -32,23 +36,31 @@ class AllEventsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupAdapter()
         observeItems()
-        viewModel.getEvents()
     }
 
     private fun observeItems() {
-        viewModel.eventsLiveData.observe(viewLifecycleOwner, {
-            adapter?.provideItems(it)
+        viewModel.listData.observe(viewLifecycleOwner, {
+            lifecycleScope.launch {  adapter?.submitData(it) }
         })
     }
 
     private fun setupAdapter() {
         adapter = EventsAdapter {
-            EventDetailBottomSheetDialogFragment().show(childFragmentManager, "TAG")
+            EventDetailBottomSheetDialogFragment().apply {
+                arguments = bundleOf("vo" to EventDetailVO(
+                    it.title,
+                    it.description,
+                    it.currentPersonCount,
+                    it.totalPersonsCount,
+                    it.chatLink
+                ))
+            }.show(childFragmentManager, "TAG")
         }
         binding?.rvAllEvents?.adapter = adapter
         binding?.rvAllEvents?.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding?.rvAllEvents?.addItemDecoration(EventCardsItemDecorator())
+        binding?.root?.postDelayed({adapter?.refresh()}, 1000)
     }
 
     override fun onDestroyView() {

@@ -7,10 +7,12 @@ import com.yandex.together.databinding.ActivityMainBinding
 import com.yandex.together.ui.login.LoginFragment
 import com.yandex.together.ui.main_screen.MainScreenFragment
 import com.yandex.together.ui.new_event.NewEventFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
+    private val viewMode: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +33,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkIsLoggedIn() {
-        supportFragmentManager.beginTransaction()
-            .replace(binding!!.fragmentContainerView.id, LoginFragment())
-            .commitAllowingStateLoss()
+        if (!viewMode.isLoggedIn()) {
+            supportFragmentManager.beginTransaction()
+                .replace(binding!!.fragmentContainerView.id, LoginFragment())
+                .commitAllowingStateLoss()
+        }
     }
 
     fun openMainScreen() {
